@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Hotel Form</h1>
+</div>
+
+
+<div class="container">
+  <form [formGroup]="hotelForm">
+  <div class="form-group">
+    <label for="foodName">FoodName</label>
+    <input id="foodName" class="form-control" type="text" formControlName="foodName">
+    <span class="text-danger" *ngIf="hotelForm.controls['foodName'].errors?.['required']">FoodName is required</span>
+    <span class="text-danger" *ngIf="hotelForm.controls['foodName'].errors">FoodName is invalid</span>
+  </div>
+  <div class="form-group">
+    <label for="family">family</label>
+    <input id="family" class="form-control" type="number" formControlName="family">
+    <span class="text-danger" *ngIf="hotelForm.controls['family'].errors?.['required']">family is required</span>
+    <span class="text-danger" *ngIf="hotelForm.controls['family'].errors">family is invalid</span>
+  </div>
+  <div class="form-group">
+    <label for="amount">amount</label>
+    <input id="amount" class="form-control" type="number" formControlName="amount">
+    <span class="text-danger" *ngIf="hotelForm.controls['amount'].errors?.['required']">amount is required</span>
+    <span class="text-danger" *ngIf="hotelForm.controls['amount'].errors">amount is invalid</span>
+  </div>
+  <div class="form-group">
+    <label for="rating">rating</label>
+    <input id="rating" class="form-control" type="number" formControlName="rating">
+    <span class="text-danger" *ngIf="hotelForm.controls['rating'].errors?.['required']">rating is required</span>
+    <span class="text-danger" *ngIf="hotelForm.controls['rating'].errors?.['max']">rating is not in specified range</span>
+  </div>
+
+  <br/>
+  <button class="btn btn-primary" (click)="addHotel()">Submit</button>
+</form>
+</div>

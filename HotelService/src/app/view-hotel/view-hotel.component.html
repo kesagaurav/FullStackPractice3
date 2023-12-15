@@ -1,0 +1,31 @@
+<div class="container">
+  <h3>Details of Hotel Service</h3>
+</div>
+
+<div class="container">
+  <table class="table table-primary">
+    <thead class="thead-primary">
+      <tr>
+        <th>Id</th>
+        <th>FoodName</th>
+        <th>Family</th>
+        <th>Amount</th>
+        <th>Rating</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hotels of hotel">
+        <td>{{hotels.hid | number}}</td>
+        <td>{{hotels.foodName | uppercase}}</td>
+        <td>{{hotels.family | number}}</td>
+        <td>{{hotels.amount | currency}}</td>
+        <td>{{hotels.rating | number}}</td>
+        <td><button class="btn btn-info" routerLink="/updateHotel/{{hotels.hid}}">update</button></td>
+        <td><button class="btn btn-danger" (click)="deleteId(hotels.hid)">delete</button></td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>
